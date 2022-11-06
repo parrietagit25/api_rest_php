@@ -1,6 +1,18 @@
 RewriteEngine on
 
-# si la ruta no existe, redirigir al index
+#quita la extencion .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+# quita la extencion .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+
+# Si la ruta no es un archivo existente, ni una carpeta
+# Reescribir al index
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+?)/?$ index.php?url=$1 [L,QSA]
