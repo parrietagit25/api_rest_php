@@ -8,7 +8,7 @@
 </head>
 <body>
 <div  class="container">
-    <h1>Api de pruebas</h1>
+    <h1>Api php + mysql</h1>
     <div class="divbody">
         <h3>Auth - login</h3>
         <code>
