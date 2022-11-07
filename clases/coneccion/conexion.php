@@ -57,6 +57,7 @@ class conexion{
     public function nonQuery($query){
 
         $results = $this->conexion->query($query);
+        
         return $this->conexion->affected_rows;
 
     }
@@ -71,6 +72,12 @@ class conexion{
             return 0;
         }
 
+    }
+
+    // encriptar 
+
+    protected function encriptar($string){
+        return md5($string);
     }
 
 

@@ -2,7 +2,7 @@
 
 class respuestas{
 
-    private $response = [
+    public $response = [
         'status' => 'ok', 
         'result' => []
     ];
@@ -13,7 +13,7 @@ class respuestas{
             'error_id' => '405', 
             'error_msg' => 'Metodo no permitido'
         ];
-        return $this->$response;
+        return $this->response;
     }
 
     public function error_200($string = "Datos incorrectos"){
@@ -22,7 +22,7 @@ class respuestas{
             'error_id' => '200', 
             'error_msg' => $string
         ];
-        return $this->$response;
+        return $this->response;
     }
 
     public function error_400(){
@@ -31,7 +31,25 @@ class respuestas{
             'error_id' => '400', 
             'error_msg' => 'Datos imcompletos o formato incorrectos'
         ];
-        return $this->$response;
+        return $this->response;
+    }
+
+    public function error_500($string = "Error 500 servidor"){
+        $this->response['status'] = 'error';
+        $this->response['result'] = [
+            'error_id' => '500', 
+            'error_msg' => $string
+        ];
+        return $this->response;
+    }
+
+    public function error_401($string = "No autorizado, token invalido"){
+        $this->response['status'] = 'error';
+        $this->response['result'] = [
+            'error_id' => '401', 
+            'error_msg' => $string
+        ];
+        return $this->response;
     }
 
 
