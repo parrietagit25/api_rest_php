@@ -1,14 +1,14 @@
 # api_rest_php
 api rest con php sin framework, con los 4 metodos principales, con mysql
 # Instrucciones para el uso del apirest, primero se general el token y apartir de ese token generado se pueden usar los metodos, post, put, delete
-Api php + mysql
-Auth - login
-POST /auth
+# Api php + mysql
+# Auth - login
+# POST /auth
 {
 "usuario" :"", -> REQUERIDO
 "password": "" -> REQUERIDO
 }
-Pacientes
+# Pacientes
 GET /pacientes?page=$numeroPagina
 GET /pacientes?id=$idPaciente
 POST /pacientes
@@ -22,7 +22,7 @@ POST /pacientes
 "fechaNacimiento" : "",
 "token" : "" -> REQUERIDO
 }
-PUT /pacientes
+# PUT /pacientes
 {
 "nombre" : "",
 "dni" : "",
@@ -34,7 +34,7 @@ PUT /pacientes
 "token" : "" , -> REQUERIDO
 "pacienteId" : "" -> REQUERIDO
 }
-DELETE /pacientes
+# DELETE /pacientes
 {
 "token" : "", -> REQUERIDO
 "pacienteId" : "" -> REQUERIDO
